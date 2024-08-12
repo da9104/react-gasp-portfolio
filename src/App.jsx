@@ -1,11 +1,100 @@
 import { useState, useContext, useRef } from 'react'
 import { DataContext } from './context'
+import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import './App.css'
+
+gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(ScrollTrigger) 
 
 function App() {
   const cursor = useContext(DataContext);
-  console.log(cursor)
+
+  useGSAP(
+    () => {
+          gsap.from('nav ul > li', {
+            top: '30',
+            opacity: '0',
+            ease: 'bounce.out',
+            delay: 0.2,
+            yoyo: true,
+            stagger: {
+                amount: 0.3,
+            }
+        })  
+      
+        gsap.from('.item h1', {
+          y: '50',
+          opacity: '0',
+          ease: 'power4.inOut',
+          delay: 0.1,
+          yoyo: true,
+          stagger: {
+              amount: 0.3,
+          }
+      })
+
+      gsap.from('.menu ul li > a', {
+        top: '30',
+        opacity: '0',
+        ease: 'power4.inOut',
+        delay: 0.6,
+        yoyo: true,
+        stagger: {
+            amount: 0.1,
+        }
+    })  
+
+        gsap.from('.sub-copy', {
+          x: '30',
+          opacity: '0',
+          ease: 'power4.inOut',
+          delay: 0.6,
+          yoyo: true,
+          stagger: {
+              amount: 0.1,
+          }
+      })  
+        gsap.from('.sub-copy > div', {
+          x: '30',
+          opacity: '0',
+          ease: 'power4.inOut',
+          delay: 0.6,
+          yoyo: true,
+          stagger: {
+              amount: 0.1,
+          }
+      })  
+
+
+    gsap.to('.skills', {
+      y: -100,
+      opacity: 1,
+      display: 0.9,
+      ease: 'power4.inOut',
+      scrollTrigger: {
+        trigger: ".container",
+        start: "top top",
+        end: "600vh top",
+        scrub: 1,
+    }
+       });
+
+    gsap.to('.portfolio-section h1', {
+      x: 700,
+      display: 0.9,
+      scrollTrigger: {
+        trigger: ".division",
+        start: "top top",
+        end: "500vh top",
+        scrub: 1,
+    }
+       });
+    
+    },
+  ); 
+
   return (
     <>
    {cursor}
@@ -88,6 +177,11 @@ function App() {
       <h1> Portfolio </h1>
 
       </div>
+
+
+        <div className='portfolio-section--boxes'>
+
+        </div>
 
     </>
   )

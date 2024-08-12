@@ -125,6 +125,7 @@ header ul li:nth-last-child(1){
     font-weight: 500;
     font-style: normal;
     line-height: 0.9;
+    opacity: 0;
   }
 
 .skills span {
@@ -137,7 +138,7 @@ header ul li:nth-last-child(1){
 
 .marquee {
   position: absolute;
-  bottom: -40%;
+  bottom: -35%;
   width: 100%;
   margin: 0 auto;
   padding: 0.1em 0;
@@ -185,6 +186,10 @@ header ul li:nth-last-child(1){
 .portfolio-section h1 {
   text-transform: uppercase;
   font-size: 90px;
+}
+
+.portfolio-section--boxes {
+  padding: 50rem
 }
 
 
