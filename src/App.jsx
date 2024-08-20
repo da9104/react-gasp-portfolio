@@ -4,13 +4,13 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import './App.css'
+import Middle from './components/Middle'
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger) 
 
 function App() {
   const cursor = useContext(DataContext);
-
   useGSAP(
     () => {
           gsap.from('nav ul > li', {
@@ -68,29 +68,6 @@ function App() {
       })  
 
 
-    gsap.to('.skills', {
-      y: -100,
-      opacity: 1,
-      display: 0.9,
-      ease: 'power4.inOut',
-      scrollTrigger: {
-        trigger: ".container",
-        start: "top top",
-        end: "600vh top",
-        scrub: 1,
-    }
-       });
-
-    gsap.to('.portfolio-section h1', {
-      x: 700,
-      display: 0.9,
-      scrollTrigger: {
-        trigger: ".division",
-        start: "top top",
-        end: "500vh top",
-        scrub: 1,
-    }
-       });
     
     },
   ); 
@@ -104,7 +81,7 @@ function App() {
           <li><a>DAMI KANG</a></li>
           <li>FRONT END</li>
           <li>WEB DEVELOPMENT</li>
-          <li>UI/UX</li>
+          <li className='custom'>UI/UX</li>
         </ul>
       </nav>
 
@@ -122,7 +99,7 @@ function App() {
         <div className="header-right col">
             <div className="item">
                 <h1>Your Front-End Genius Idea</h1>
-                {/* <h1>Idea</h1> */}
+          
             </div>
         </div>
      </div>
@@ -137,18 +114,22 @@ function App() {
            
            <div>
             <p>Aliqua commodo est dolor cillum cillum cillum ut voluptate sunt anim consectetur.</p>
-            <div class="btn link">
-                <span>Portfolio</span>
+            <div className="btn custom">
+               Portfolio
             </div>
            </div>
 
           <div>
            <p>Aliqua commodo est dolor cillum cillum cillum ut voluptate sunt anim consectetur.</p>
-            <div class="btn link">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="0.5" stroke="currentColor" className="size-1 btn-arrow">
+            <div className="btn custom">
+                
+               <span style={{ display: 'flex' }}> Github 
+               
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="0.5" stroke="currentColor" className="size-3">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
                   </svg>
-                <span>Github</span>
+
+                </span>
                 
             </div>
           </div>
@@ -158,30 +139,9 @@ function App() {
       </div>
     </header>
 
-
-     <div className='skills'>
-
-      <p>
-        <p> HTML <span>JAVASCRIPT</span> CSS <span>REACT</span> </p>
-        <p>  SCSS TYPESCRIPT NEXTJS <span>PYTHON</span> </p>
-        <p> <span>GIT</span> FIGMA PHOTOSHOP </p>
-      </p>
-     </div>
-
-     <div class="marquee">
-        <span>
-        Front-end Engineer with 1+ years of experience, proficient in UX * UI design, JavaScript, and React. Proven ability to work independently and collaboratively, with strong problem-solving and communication skills.          </span>
-    </div>
-
-      <div className='portfolio-section'>
-      <h1> Portfolio </h1>
-
-      </div>
+      <Middle />
 
 
-        <div className='portfolio-section--boxes'>
-
-        </div>
 
     </>
   )

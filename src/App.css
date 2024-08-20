@@ -10,6 +10,8 @@ body {
 }
 
 nav ul {
+  padding-left: 20px;
+  padding-top: 10px;
   display: flex;
   justify-content: space-between;
   font-weight: 800;
@@ -34,7 +36,10 @@ header ul li:nth-last-child(1){
 }
 
 .header-right h1 {
-  font-size: 150px;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  font-size: 140px;
+  font-weight: 700;
   line-height: -10rem;
   text-transform: uppercase;
   line-height: 0.8;
@@ -45,8 +50,11 @@ header ul li:nth-last-child(1){
   width: 50%;
 }
 
+.menu {
+  padding-left: 20px;
+  padding-top: 50px;
+}
 .menu a {
-  
   text-decoration: none;
   color: black;
   position: relative;
@@ -84,7 +92,9 @@ header ul li:nth-last-child(1){
   flex-direction: row;
 }
 .sub-copy h2 {
+  margin-top: 15px;
   margin-left: 45px;
+  font-weight: 800;
 }
 
 .sub-btns {
@@ -96,15 +106,16 @@ header ul li:nth-last-child(1){
 .btn {
   border: 1px solid black;
   margin-right: 1em;
-  padding-bottom: 1.4em;
+  margin-top: 0.9em;
+  padding-bottom: 1.9em;
   padding-left: 1.4em;
   padding-top: 0.4em;
   border-radius: 20px;
   font-weight: 300;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;   
-  height: 10px;
-  width: 90px;
+  height: 15px;
+  width: 130px;
 }
 
 .btn:hover {
@@ -188,14 +199,30 @@ header ul li:nth-last-child(1){
   font-size: 90px;
 }
 
-.portfolio-section--boxes {
-  padding: 50rem
+/* .portfolio-section--boxes {
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+} */
+
+#bg:hover {
+  background-image: url('./assets/react.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 
 @media(max-width: 900px) {
-  nav ul li {
+  nav ul li:nth-last-child(1) {
       display: none;
+  }
+
+  nav ul li:nth-last-child(2) {
+      display: none;
+  }
+
+  nav ul li:nth-last-child(3) {
+      margin-right: 40px;
   }
 
   nav {

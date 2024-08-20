@@ -33,14 +33,14 @@ export const DataProvider = ({ children }) => {
        'button',
        '.link',
        {
-         target: '.custom',
+         target: '.btn',
          options: {
-           innerSize: 12,
-           outerSize: 12,
+           innerSize: 0,
+           outerSize: 0,
            color: '255, 255, 255',
-           outerAlpha: 0.3,
-           innerScale: 0.7,
-           outerScale: 5
+           outerAlpha: 0,
+           innerScale: 0,
+           outerScale: 0,
          }
        }
      ]}
