@@ -8,8 +8,6 @@ import PortfolioList from './components/PortfolioList'
 
 function App() {
   const cursor = useContext(DataContext);
-
-
   return (
     <>
     {cursor}

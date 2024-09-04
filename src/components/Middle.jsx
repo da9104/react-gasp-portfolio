@@ -2,9 +2,9 @@
 import { useScroll, useTransform, motion } from 'framer-motion';
 import Lenis from 'lenis';
 import { useEffect, useRef } from 'react';
-import Picture1 from '/public/images/1.jpg'
-import Picture2 from '/public/images/2.jpg'
-import Picture3 from '/public/images/3.jpg'
+import Picture1 from '/images/1.jpg'
+import Picture2 from '/images/2.jpg'
+import Picture3 from '/images/3.jpg'
 
 export default function Home() {
 
