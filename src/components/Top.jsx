@@ -1,7 +1,7 @@
+import { useState } from 'react'
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-// import { Link } from 'react-router-dom'
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger) 
@@ -65,9 +65,20 @@ function Top() {
     },
   ); 
 
-  return (
+    const [isHovered, setIsHovered] = useState(false);
+  
+    const handleMouseEnter = () => {
+      setIsHovered(true);
+    };
+  
+    const handleMouseLeave = () => {
+      setIsHovered(false);
+    };
+  
+    const textColor = isHovered ? 'red' : 'black';
+
+    return (
     <>
-   
     <header className='z-50'>
       <nav>
         <ul>
@@ -78,9 +89,9 @@ function Top() {
         </ul>
       </nav>
 
-     <div className='container'>
-      <div className="header-left col">
-           <div className="menu">
+     <div className='container z-50'>
+      <div className="header-left col hidden lg:block">
+           <div className="menu ">
                 <ul>
                   <li><a>HOME</a></li>
                   <li><a>ABOUT</a></li>
@@ -116,14 +127,14 @@ function Top() {
            <p>Aliqua commodo est dolor cillum cillum cillum ut voluptate sunt anim consectetur.</p>
             <div className="btn custom bg-transparent hover:bg-black">
                 
-               <a style={{ display: 'flex' }} href='https://github.com/da9104/'> Github 
-               
+               <a target="_blank" 
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                style={{ display: 'flex',  color: textColor }} href={'https://github.com/da9104/'} > Github 
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="0.5" stroke="currentColor" className="size-3">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
                   </svg>
-
                 </a>
-                
             </div>
 
           </div>

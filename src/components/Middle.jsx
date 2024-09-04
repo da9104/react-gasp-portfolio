@@ -7,27 +7,15 @@ import Picture2 from '/images/2.jpg'
 import Picture3 from '/images/3.jpg'
 
 export default function Home() {
-
     const container = useRef();
     const { scrollYProgress } = useScroll({
       target: container,
       offset: ['start end', 'end start']
     })
   
-    useEffect( () => {
-      const lenis = new Lenis()
-  
-      function raf(time) {
-        lenis.raf(time)
-        requestAnimationFrame(raf)
-      }
-  
-      requestAnimationFrame(raf)
-    }, [])
-  
     return (
       <main className="overflow-hidden">
-        <div className='h-[10vh]'/>
+        <div className='h-[20vh]'/>
         <div ref={container}>
           <Slide src={Picture1} direction={'left'} left={"-40%"} progress={scrollYProgress}/>
           <Slide src={Picture2} direction={'right'} left={"-25%"} progress={scrollYProgress}/>

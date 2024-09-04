@@ -1,21 +1,10 @@
 import { useState, useEffect } from 'react'
-import Lenis from 'lenis'
 import Scene from './Projects/Scene'
 import Projects from './Projects/Projects'
 
 const PortfolioList = () => {
-
     const [activeMenu, setActiveMenu] = useState(null)
-    useEffect( () => {
-        const lenis = new Lenis()
-
-        function raf(time) {
-        lenis.raf(time)
-        requestAnimationFrame(raf)
-        }
-        requestAnimationFrame(raf)
-    }, [])
-
+  
     return (
         <>
             {/* Portfolio Projects */}
