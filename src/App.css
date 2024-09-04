@@ -17,6 +17,11 @@ nav ul {
   font-weight: 800;
   border-bottom: 1px solid gray;
 }
+
+header {
+  z-index: 50;
+}
+
 header ul li {
   margin-bottom: 7px;
   list-style: none;
@@ -50,18 +55,18 @@ header ul li:nth-last-child(1){
   width: 50%;
 }
 
-.menu {
+header .menu {
   padding-left: 20px;
   padding-top: 50px;
 }
-.menu a {
+header .menu a {
   text-decoration: none;
   color: black;
   position: relative;
   cursor: pointer;
 }
 
-.menu a::after{
+header .menu a::after{
   content: '';
   width: 0;
   height: 3px;
@@ -73,7 +78,7 @@ header ul li:nth-last-child(1){
   transition: width 0.4s;
 }
 
-.menu a:hover::after{
+header .menu a:hover::after{
   width: 100%;
 }
 
@@ -128,89 +133,12 @@ header ul li:nth-last-child(1){
   width: 15px;
 }
 
-.skills {
-    text-align: center;
-    font-size: 70px;
-    font-family: "Space Grotesk", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-    line-height: 0.9;
-    opacity: 0;
-  }
-
-.skills span {
-  text-decoration: underline;
-}
-
-.skills p > p {
- margin: 4px;
-}
-
-.marquee {
-  position: absolute;
-  bottom: -35%;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0.1em 0;
-  white-space: nowrap;
-  overflow: hidden;
-  z-index: 3;
-  background: black;
-  display: flex;
-  align-items: center;
-  font-style: italic;
-}
-
-.marquee span {
-  text-transform: uppercase;
-  font-weight: 400;
-  color: #95b9ac;
-  mix-blend-mode: normal !important;
-  font-size: 4em;
-  text-transform: uppercase;
-  padding-left: -10%;
-  animation: marquee-animation 80s linear infinite; 
-  transition: color 0.3s;   
-}
-
-.marquee span:hover {
-  color: #96b8d7;
-  /* color: white; */
-}
-
-
-@keyframes marquee-animation {
-  0% {
-      transform: translate(0, 0);
-  }
-  100% {
-      transform: translate(-100%, 0);
-  }
-}
-
-.portfolio-section {
-   position: relative;
-   top: 100px;
-}
-
-.portfolio-section h1 {
-  text-transform: uppercase;
-  font-size: 90px;
-}
-
-/* .portfolio-section--boxes {
-  display: flex;
-  flex-direction: row;
-  gap: 5rem;
-} */
-
+/* 
 #bg:hover {
   background-image: url('./assets/react.svg');
   background-size: cover;
   background-repeat: no-repeat;
-}
-
+} */
 
 @media(max-width: 900px) {
   nav ul li:nth-last-child(1) {

@@ -2,9 +2,9 @@
 import { useScroll, useTransform, motion } from 'framer-motion';
 import Lenis from 'lenis';
 import { useEffect, useRef } from 'react';
-import Picture1 from '../../public/images/1.jpg'
-import Picture2 from '../../public/images/2.jpg'
-import Picture3 from '../../public/images/3.jpg'
+import Picture1 from '/public/images/1.jpg'
+import Picture2 from '/public/images/2.jpg'
+import Picture3 from '/public/images/3.jpg'
 
 export default function Home() {
 
@@ -33,7 +33,7 @@ export default function Home() {
           <Slide src={Picture2} direction={'right'} left={"-25%"} progress={scrollYProgress}/>
           <Slide src={Picture3} direction={'left'}  left={"-75%"} progress={scrollYProgress}/>
         </div>
-        <div className='h-[100vh]' />
+        <div className='h-[10vh]' />
       </main>
     );
   }
