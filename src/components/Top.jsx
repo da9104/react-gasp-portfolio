@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { DataContext } from '../context'
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger) 
@@ -64,9 +65,9 @@ function Top() {
       })  
     },
   ); 
-
+    // const cursor = useContext(DataContext)
     const [isHovered, setIsHovered] = useState(false);
-  
+
     const handleMouseEnter = () => {
       setIsHovered(true);
     };
@@ -79,7 +80,7 @@ function Top() {
 
     return (
     <>
-    <header className='z-50'>
+    <header className='!z-20'>
       <nav>
         <ul>
           <li><a>DAMI KANG</a></li>
@@ -91,7 +92,7 @@ function Top() {
 
      <div className='container z-50'>
       <div className="header-left col hidden lg:block">
-           <div className="menu ">
+           <div className="menu !z-50">
                 <ul>
                   <li><a>HOME</a></li>
                   <li><a>ABOUT</a></li>
@@ -125,7 +126,7 @@ function Top() {
 
           <div>
            <p>Aliqua commodo est dolor cillum cillum cillum ut voluptate sunt anim consectetur.</p>
-            <div className="btn custom bg-transparent hover:bg-black">
+            <div className="!z-10 btn custom bg-transparent hover:bg-black">
                 
                <a target="_blank" 
                 onMouseEnter={handleMouseEnter}

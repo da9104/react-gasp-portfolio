@@ -41,8 +41,14 @@ export default function Projects({setActiveMenu}) {
                       ? { height: contentRef.current.scrollHeight }
                       : { height: "0px" }
                       }>
-                    <p className="body-content text-sm ml-5">{project.body}</p>
-                    <p className="body-content text-sm ml-5">{project.link}</p>
+                {Array.isArray(project.body) ? (
+                 project.body.map((el, i) =>(
+                   <p key={i} className="body-content text-sm ml-5">{el.content}</p>))
+                ) : ( 
+                <p className="body-content text-sm ml-5">{project.body}</p>
+                  )
+                }
+                  <p className="body-content text-sm ml-5">{project.link}</p>
                   </div>
               </li>
             )

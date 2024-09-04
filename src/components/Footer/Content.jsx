@@ -22,7 +22,7 @@ const Section2 = () => {
     return (
         <div className='flex justify-between items-end'>
             <h1 className='text-[14vw] leading-[0.8] mt-10'>Let's work together!</h1>
-            <img src={Dami} style={{ width: '150px', transform: 'rotate(20deg)' }} />
+            <img src={Dami} className='dami' style={{ width: '150px' }} />
             <p>©DamiKang</p>
         </div>
     )
@@ -39,7 +39,7 @@ const Nav = () => {
             </div>
             <div className='flex flex-col gap-2'>
                 <h3 className='mb-2 uppercase text-[#ffffff80]'>Dami Kang</h3>
-                <a href={'damikang.super.site'}>Blog</a>
+                <a href={'https://damikang.super.site'}>Blog</a>
                 <a href={'https://github.com/da9104'}>Github</a>
                 <a href={'https://www.linkedin.com/in/kangdami'}>LinkedIn</a>
             </div>

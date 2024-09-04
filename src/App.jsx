@@ -23,7 +23,7 @@ function App() {
 
   return (
     <>
-    {/* {cursor} */}
+    {cursor}
      <Top/>
      <Middle />
      <PortfolioList />

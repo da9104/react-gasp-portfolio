@@ -19,7 +19,7 @@ nav ul {
 }
 
 header {
-  z-index: 50;
+  z-index: 100 !important;
 }
 
 header ul li {
@@ -56,6 +56,7 @@ header ul li:nth-last-child(1){
 }
 
 header .menu {
+  z-index: 100;
   padding-left: 20px;
   padding-top: 50px;
 }
@@ -133,12 +134,23 @@ header .menu a:hover::after{
   width: 15px;
 }
 
-/* 
-#bg:hover {
-  background-image: url('./assets/react.svg');
-  background-size: cover;
-  background-repeat: no-repeat;
-} */
+.dami {
+  animation:spin 4s linear infinite;
+}
+
+@-moz-keyframes spin { 
+  100% { -moz-transform: rotate(360deg); } 
+}
+@-webkit-keyframes spin { 
+  100% { -webkit-transform: rotate(360deg); } 
+}
+@keyframes spin { 
+  100% { 
+      -webkit-transform: rotate(360deg); 
+      transform:rotate(360deg); 
+  } 
+}
+
 
 @media(max-width: 900px) {
   nav ul li:nth-last-child(1) {

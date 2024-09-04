@@ -15,7 +15,7 @@ const PortfolioList = () => {
                 </h2>
                 <Projects setActiveMenu={setActiveMenu}/>
                 <Scene activeMenu={activeMenu}/>
-                <div className="h-[50vh]"></div>
+                <div className="lg:h-[30vh] sm:h-[10vh]"></div>
             </main>
             {/* Portfolio Projects */}
         </>
