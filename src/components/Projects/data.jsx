@@ -3,16 +3,20 @@ export const projects = [
       title: "313 dev: ARMS",
       src: "images/screen6.png",
       body: [
-        { content: 'Sit est nulla minim minim esse ipsum ad officia.'},
-        { content: 'Sit est nulla minim minim esse ipsum ad officia.'},
-        { content: 'Sit est nulla minim minim esse ipsum ad officia.'},
+        { content: '1. 개발자 도큐먼트(document) 페이지 제작과 설계부터 레이아웃, 네비게이션, 링크 기능 구현.'},
+        { content: '2. 총 2명으로 이루어진 프론트엔드 팀원과 업무를 분담 및 협업하고, 코드리뷰 진행과(Github) 백앤드 팀과 스터디 콜라보레이션 등 오픈소스 개발에 기여.'},
+        { content: '3. Axios를 사용한 php 문서 파싱과 (html→jsx) jQuery에서 리액트로 코드 migration 담당. 리액트 ecosystem 사용과 모바일 최적화 구현(optimising)'},
       ],
       link: 'https://313.co.kr/document/dist'
     },
     {
       title: "React Kanban Board app",
       src: "images/screen4.png",
-      body: 'Sit est nulla minim minim esse ipsum ad officia.',
+      body: [
+        { content: '1. 사용자는 칸반 보드의 생성, 읽기, 업데이트, 삭제 기능을 사용할 수 있어야 함.(Create, read, update, delete) '},
+        { content: '2. 보드가 생성되거나 업데이트 될 시, 사용자는 즉각 모달(Modal) 팝업으로 피드백을 받을 수 있는 dynamic SPA 구현.'},
+        { content: '3. 서브 task가 완료될 시, task 토글 기능이 구현되는 functional programming 성취.'},
+      ],
       link: 'https://da9104.github.io/react-kanban-board'
     },
     {
@@ -40,7 +44,7 @@ export const projects = [
       src: "images/screen3.png",
       body: [
         { content: '1. 애플 iTunes API를 이용한 음원 검색 사이트, 검색 기능을 AngularJS로 구축'},
-        { content: '2.직관적인 웹사이트 UI 디자인과 BootStrap을 이용하여 시맨틱 웹 디자인 구현'},
+        { content: '2. 직관적인 웹사이트 UI 디자인과 BootStrap을 이용하여 시맨틱 웹 디자인 구현'},
         { content: '3. 전반적인 CSS flexbox와 Grid 시스템 활용을 한 모바일 중심 디자인 추구'},
       ],
       link: 'https://github.com/da9104/getMedia'
@@ -48,13 +52,21 @@ export const projects = [
     {
       title: "React Job Board app",
       src: "images/screen5.png",
-      body: 'Sit est nulla minim minim esse ipsum ad officia.',
+      body: [
+        { content: '1. 사용자가 Job listing 필터를 사용하여 카테고리를 분류하여 볼 수 있는 리액트 웹 앱 구현.'},
+        { content: '2. 사용자는 자신의 디바이스 스크린 사이즈에 최적화 된 레이아웃으로 화면이 display 되어야 하는 모바일 우선 모던 디자인 추구.'},
+        { content: '3. 카테고리 별로 사용자는 Job 서치에 필터를 할 수 있는 Dynamic 웹 앱 구현.'},
+      ],
       link: 'https://da9104.github.io/react-jobboard'
     },
     {
       title: "React IP Tracker",
       src: "images/screen7.png",
-      body: 'Sit est nulla minim minim esse ipsum ad officia.',
+      body: [
+        { content: '1. 사용자가 검색창에 IP address 를 입력하면 하단에 그래픽 맵이 표시 되도록 구현.'},
+        { content: '2. ipapi API 이용한 IP 추적과 관련 정보를 표시하도록 구현.  '},
+        { content: '3. leaflet 자바스크립트 라이브러리를 사용하여, IP API의 Location 값과 연동한 하단 영역 맵 표시'},
+      ],
       link: 'https://da9104.github.io/React-ipTracker/'
     },
   
