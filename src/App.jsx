@@ -10,14 +10,26 @@ import Footer from "@/components/Footer/Footer";
 function App() {
   const cursor = useContext(DataContext);
   const [cursorComponent, setCursorComponent] = useState(null);
-  
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
+    // Set wait cursor
+    document.body.style.cursor = "wait";
+    setIsLoading(true);
+
     const timer = setTimeout(() => {
-      setCursorComponent(cursor);
-    }, 500);
+      // Reset cursor and set loading to false after 500ms
+      document.body.style.cursor = "default";
+      setIsLoading(false);
+    }, 800);
     return () => clearTimeout(timer);
   }, [cursor]);
 
+  useEffect(() => {
+    if (!isLoading) {
+      setCursorComponent(cursor);
+    }
+  }, [isLoading, cursor]);
 
   useEffect(() => {
     const lenis = new Lenis()
@@ -32,7 +44,7 @@ function App() {
 
   return (
     <>
-    {cursorComponent}
+    {!isLoading && cursorComponent}
      <Top/>
      <Middle />
      <PortfolioList />
