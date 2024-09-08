@@ -9,10 +9,17 @@ import Footer from "@/components/Footer/Footer";
 
 function App() {
   const cursor = useContext(DataContext);
+  const [cursorComponent, setCursorComponent] = useState(null);
+  
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setCursorComponent(cursor);
+    }, 500);
+    return () => clearTimeout(timer);
+  }, [cursor]);
 
 
-
-  useEffect( () => {
+  useEffect(() => {
     const lenis = new Lenis()
 
     function raf(time) {
@@ -25,11 +32,10 @@ function App() {
 
   return (
     <>
-    {cursor && cursor}
+    {cursorComponent}
      <Top/>
      <Middle />
      <PortfolioList />
-
      <Footer />
     </>
   )
