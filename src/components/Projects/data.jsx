@@ -33,11 +33,21 @@ export const projects = [
       title: "STREAMY E-커머스 Stripe API ",
       src: "images/screen2.png",
       body: [
+        { content: '1. 사용자에게 크레딧을 구입 후 이메일 배포를 이용하도록 웹 서비스 기획 및 구현.'},
+        { content: '2. Stripe API를 사용한 사용자 카드 결제와 유저 로그인 데이터를 MongoDB로 저장. 유저 인증 JSON Web Tokens 사용.'},
+        { content: '3. Redux-toolkit을 이용한 앱 로딩 시간 최적화, 효율적인 앱 구조 설계.'},
+      ],
+      link: 'https://github.com/da9104/streamy',
+    },
+    {
+      title: "Pokémon Python Game app",
+      src: "images/screen9.png",
+      body: [
         { content: '1. 공식 Pokémon API를 사용한 포켓몬 게임 제작. API 콜 (POST, GET, PATCH) Funtional programming 패러다임 사용.'},
         { content: '2. 4명으로 이루어진 팀과 함께 협력하고 Slack으로 소통하며 코드 리뷰와 merging 진행'},
         { content: '3. 10개의 팀 중 4등으로 성공적으로 최종 수료.'},
       ],
-      link: 'https://github.com/da9104/streamy',
+      link: 'https://poke-mon.super.site',
     },
     {
       title: "GetMedia AngularJS Project",

@@ -10,6 +10,8 @@ import Footer from "@/components/Footer/Footer";
 function App() {
   const cursor = useContext(DataContext);
 
+
+
   useEffect( () => {
     const lenis = new Lenis()
 
@@ -23,10 +25,11 @@ function App() {
 
   return (
     <>
-    {cursor}
+    {cursor && cursor}
      <Top/>
      <Middle />
      <PortfolioList />
+
      <Footer />
     </>
   )
