@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from 'react'
-import { DataContext } from './context'
+import Cursor from './components/UI/Cursor';
 import './App.css'
 import Lenis from 'lenis';
 import Top from './components/Top'
@@ -8,28 +8,20 @@ import PortfolioList from './components/PortfolioList'
 import Footer from "@/components/Footer/Footer";
 
 function App() {
-  const cursor = useContext(DataContext);
-  const [cursorComponent, setCursorComponent] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isTouch, setIsTouch] = useState();
 
-  useEffect(() => {
-    // Set wait cursor
-    document.body.style.cursor = "wait";
-    setIsLoading(true);
+    useEffect(() => {
+      setIsTouch(isTouchDevice());
+    }, []);
 
-    const timer = setTimeout(() => {
-      // Reset cursor and set loading to false after 500ms
-      document.body.style.cursor = "default";
-      setIsLoading(false);
-    }, 800);
-    return () => clearTimeout(timer);
-  }, [cursor]);
-
-  useEffect(() => {
-    if (!isLoading) {
-      setCursorComponent(cursor);
+    function isTouchDevice() {
+      return (
+        "ontouchstart" in window ||
+        navigator.maxTouchPoints > 0 ||
+        navigator.msMaxTouchPoints > 0
+      );
     }
-  }, [isLoading, cursor]);
+
 
   useEffect(() => {
     const lenis = new Lenis()
@@ -44,7 +36,8 @@ function App() {
 
   return (
     <>
-    {!isLoading && cursorComponent}
+     {!isTouch && <Cursor />}
+   
      <Top/>
      <Middle />
      <PortfolioList />
