@@ -1,5 +1,10 @@
 import React from 'react'
 import Dami from '/images/damikang.png'
+import { useDispatch } from "react-redux";
+import { animationActions } from '../../store/animationSlice';
+import { useState, useRef } from "react";
+import useSlideIn from "../../hooks/useSlideIn"
+import { motion, useTransform, useScroll } from "framer-motion";
 
 export default function Content() {
   return (
@@ -19,10 +24,61 @@ const Section1 = () => {
 }
 
 const Section2 = () => {
+    const dispatch = useDispatch();
+    const [pos, setPos] = useState(null);
+    const buttonRef = useRef();
+  
+    const title = useRef();
+    const { height, scroll, width, top } = useSlideIn(title);
+    const { scrollY } = useScroll();
+    const x = useTransform(
+      scrollY,
+      [0, top - height, scroll],
+      [0, 0, -0.8 * scroll]
+    );
+  
+    function onMouseEnter(e) {
+      dispatch(animationActions.hideCursor());
+      const { pageX: x, pageY: y } = e;
+      const { offsetLeft, offsetTop } = e.target;
+      setPos({
+        x: x - offsetLeft + "px",
+        y: y - offsetTop + "px",
+      });
+    }
+  
+    const parentVariant = {
+      animate: {
+        transition: {
+          staggerChildren: 0.1,
+        },
+      },
+    };
+  
+    const childVariant = {
+      initial: {
+        opacity: 0,
+      },
+    };
+  
+    const whileInView = {
+      opacity: 1,
+      transition: {
+        duration: 0.7,
+      },
+    };
+
     return (
         <div className='flex justify-between items-end'>
             <h1 className='text-[14vw] leading-[0.8] mt-10'>Let's work together!</h1>
-            <img src={Dami} className='dami' style={{ width: '150px' }} />
+            <img 
+            onMouseEnter={() => dispatch(animationActions.message())}
+            onMouseLeave={() => dispatch(animationActions.removeState())}
+            src={Dami} 
+            className='dami' 
+            style={{ width: '150px' }} 
+            priority={true}
+            />
             <p>©DamiKang</p>
         </div>
     )

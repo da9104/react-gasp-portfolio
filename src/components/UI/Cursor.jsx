@@ -13,12 +13,12 @@ export default function Cursor() {
   const dispatch = useDispatch();
 
   const messages = [
-    "Handsome? Me? Oh Thank you!",
-    "Oh stop! You're making me blush",
-    "Yeah Yeah, I get that a lot",
-    "Why you keep hovering over me la?",
+    "Hello! Oh Thank you!",
+    "I can't wait to talk to you.",
+    "Get in touch with me anytime!  ",
+    "You can send me an email :)",
     "Again??",
-    "I can do this all day 💪",
+    "Let's make a real difference 💪",
   ];
 
   function onMouseMove(event) {
