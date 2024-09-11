@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import Cursor from './components/UI/Cursor';
 import './App.css'
 import Lenis from 'lenis';
@@ -8,11 +8,8 @@ import PortfolioList from './components/PortfolioList'
 import Footer from "@/components/Footer/Footer";
 
 function App() {
-  const [isTouch, setIsTouch] = useState();
-
-    useEffect(() => {
-      setIsTouch(isTouchDevice());
-    }, []);
+  const [isTouch, setIsTouch] = useState(null)
+  const [isLoading, setIsLoading] = useState(true)
 
     function isTouchDevice() {
       return (
@@ -22,8 +19,29 @@ function App() {
       );
     }
 
-
+  
+  // Detect touch device immediately on mount
   useEffect(() => {
+    setIsTouch(isTouchDevice());
+  }, []);
+
+  // Loading effect with cursor management
+  useEffect(() => {
+    const loadCursorAsync = async () => {
+      document.body.style.cursor = "wait";
+      setIsLoading(true);
+
+      // Simulate loading or asynchronous task
+      await new Promise(resolve => setTimeout(resolve, 800));
+
+      document.body.style.cursor = "default"; // Reset cursor
+      setIsLoading(false);
+    };
+
+    loadCursorAsync(); // Call the async function
+  }, []);
+
+   useEffect(() => {
     const lenis = new Lenis()
 
     function raf(time) {
@@ -32,12 +50,16 @@ function App() {
     }
 
     requestAnimationFrame(raf)
+
+    return () => {
+      lenis.destroy(); // Clean up the instance on unmount
+    };
   }, [])
 
   return (
     <>
-     {!isTouch && <Cursor />}
-   
+     {!isTouch && !isLoading && <Cursor />}
+     {/* Render the main components */}
      <Top/>
      <Middle />
      <PortfolioList />
