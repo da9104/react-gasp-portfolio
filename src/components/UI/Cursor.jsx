@@ -28,9 +28,9 @@ export default function Cursor() {
   }
 
   useEffect(() => {
-    function routeChangeHandler() {
-      dispatch(animationActions.resetIndex());
-    }
+    // function routeChangeHandler() {
+    //   dispatch(animationActions.resetIndex());
+    // }
 
     function onMouseEnter() {
       dispatch(animationActions.removeState());
